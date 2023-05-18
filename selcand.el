@@ -47,7 +47,6 @@
 
 
 (require 'cl-lib)
-(require 's)
 
 (defcustom selcand-default-hints
   "1234acdefqrstvwxz"
@@ -111,7 +110,7 @@ and mapped to the corresponding single-char candidate."
                                                 hints-cands))))
                      (char-to-string
                       (read-char
-                       (concat prompt "\n" (s-join "\n" choices)))))
+                       (concat prompt "\n" (string-join choices "\n")))))
                     (t (minibuffer-with-setup-hook
                            #'minibuffer-completion-help
                          (completing-read prompt choices
