@@ -5,22 +5,22 @@
 ;; Author: Ernesto Alfonso
 ;; Maintainer: (concat "erjoalgo" "@" "gmail" ".com")
 ;; Created: Thu Jan 24 00:18:56 2019 (-0800)
-;; Version:
-;; Package-Requires: ((cl-lib "0.5"))
+;; Version: 0.0.1
+;; Package-Requires: ((emacs "24.4"))
 ;; Last-Updated:
 ;;           By:
 ;;     Update #: 0
-;; URL:
+;; URL: https://github.com/erjoalgo/selcand
 ;; Doc URL:
-;; Keywords:
+;; Keywords: lisp completing-read prompt combinations vimium
 ;; Compatibility:
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Commentary:
-;;
-;;
-;;
+;; Like vimium, selcand-select enumerates a potentially large list
+;; of candidates using very short hints that the user may type to
+;; make a selection.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Change Log:
