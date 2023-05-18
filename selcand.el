@@ -54,25 +54,6 @@
   :type 'string
   :group 'selcand)
 
-(defun selcand-hints (cands &optional chars)
-  "Return an alist (HINT . CAND) for each candidate in CANDS.
-
-  Each hint consists of characters in the string CHARS."
-  (setf chars (or chars selcand-default-hints))
-  (cl-assert cands)
-  (cl-loop with hint-width = (ceiling (log (length cands) (length chars)))
-           with current = '("")
-           for _ below hint-width do
-           (setq current
-                 (cl-loop for c across chars nconc
-                          (mapcar (apply-partially 'concat (char-to-string c))
-                                  current)))
-           finally
-           (return
-            (cl-loop for hint in current
-                     for cand in cands
-                     collect (cons hint cand)))))
-
 ;;;###autoload
 (defun selcand-select (candidates
                        &optional prompt stringify
@@ -121,6 +102,25 @@ and mapped to the corresponding single-char candidate."
          (cand (let* ((hint (car (split-string choice sep))))
                  (cdr (assoc hint hints-cands #'equal)))))
     cand))
+
+(defun selcand-hints (cands &optional chars)
+  "Return an alist (HINT . CAND) for each candidate in CANDS.
+
+  Each hint consists of characters in the string CHARS."
+  (setf chars (or chars selcand-default-hints))
+  (cl-assert cands)
+  (cl-loop with hint-width = (ceiling (log (length cands) (length chars)))
+           with current = '("")
+           for _ below hint-width do
+           (setq current
+                 (cl-loop for c across chars nconc
+                          (mapcar (apply-partially 'concat (char-to-string c))
+                                  current)))
+           finally
+           (return
+            (cl-loop for hint in current
+                     for cand in cands
+                     collect (cons hint cand)))))
 
 (provide 'selcand)
 
