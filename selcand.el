@@ -73,6 +73,7 @@
                      for cand in cands
                      collect (cons hint cand)))))
 
+;;;###autoload
 (defun selcand-select (candidates
                        &optional prompt stringify
                        autoselect-if-single
