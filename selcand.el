@@ -6,7 +6,7 @@
 ;; Maintainer: (concat "erjoalgo" "@" "gmail" ".com")
 ;; Created: Thu Jan 24 00:18:56 2019 (-0800)
 ;; Version:
-;; Package-Requires: ()
+;; Package-Requires: ((cl-lib "0.5"))
 ;; Last-Updated:
 ;;           By:
 ;;     Update #: 0
