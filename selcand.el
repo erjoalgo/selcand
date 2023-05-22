@@ -36,6 +36,7 @@
 
 
 (require 'cl-lib)
+(require 'subr-x)
 
 (defcustom selcand-default-hints
   "1234acdefqrstvwxz"
