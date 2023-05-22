@@ -1,19 +1,13 @@
 ;;; selcand.el --- Select a candidate from a tree of hint characters
 ;;
 ;; Filename: selcand.el
-;; Description:
 ;; Author: Ernesto Alfonso
 ;; Maintainer: (concat "erjoalgo" "@" "gmail" ".com")
 ;; Created: Thu Jan 24 00:18:56 2019 (-0800)
 ;; Version: 0.0.1
 ;; Package-Requires: ((emacs "24.4"))
-;; Last-Updated:
-;;           By:
-;;     Update #: 0
 ;; URL: https://github.com/erjoalgo/selcand
-;; Doc URL:
 ;; Keywords: lisp completing-read prompt combinations vimium
-;; Compatibility:
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -21,11 +15,6 @@
 ;; Like vimium, selcand-select enumerates a potentially large list
 ;; of candidates using very short hints that the user may type to
 ;; make a selection.
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;;; Change Log:
-;;
-;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; This program is free software: you can redistribute it and/or modify
