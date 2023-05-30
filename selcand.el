@@ -80,10 +80,13 @@ and mapped to the corresponding single-char candidate."
                      (car choices)
                    (cond
                     (read-char
-                     (cl-assert
+                     (unless
                       (= 1 (apply #'max (mapcar (lambda (hint-cand)
                                                   (length (car hint-cand)))
-                                                hints-cands))))
+                                                hints-cands)))
+                      (error
+                       "Not enough 1-char hints for %d candidates"
+                       (length candidates)))
                      (char-to-string
                       (read-char
                        (concat prompt "\n" (string-join choices "\n")))))
