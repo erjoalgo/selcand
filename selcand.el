@@ -46,11 +46,13 @@
   :group 'selcand)
 
 ;;;###autoload
-(defun selcand-select (candidates
-                       &optional prompt stringify
-                       autoselect-if-single
-                       initial-input
-                       read-char)
+(cl-defun selcand-select (candidates
+                          &key
+                          prompt
+                          stringify
+                          autoselect-if-single
+                          initial-input
+                          read-char)
   "Use PROMPT to prompt for a selection from CANDIDATES.
 
 STRINGIFY is an optional function to represent a candidate as a string.
