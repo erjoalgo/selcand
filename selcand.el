@@ -49,13 +49,13 @@
 (cl-defun selcand-select (candidates
                           &key
                           prompt
-                          stringify
+                          stringify-fn
                           autoselect-if-single
                           initial-input
                           read-char)
   "Use PROMPT to prompt for a selection from CANDIDATES.
 
-STRINGIFY is an optional function to represent a candidate as a string.
+STRINGIFY-FN is an optional function to represent a candidate as a string.
 If AUTOSELECT-IF-SINGLE is non-nil and there is exactly one candidate,
 prompting the user is skipped.
 INITIAL-INPUT, if non-nil, is used as the initial input in a
@@ -65,10 +65,10 @@ and mapped to the corresponding single-char candidate."
 
   (let* ((hints-cands (selcand-hints candidates))
          (sep ") ")
-         (stringify (or stringify #'prin1-to-string))
+         (stringify-fn (or stringify-fn #'prin1-to-string))
          (initial-candidate nil)
          (choices (cl-loop for (hint . cand) in hints-cands
-                           as string = (funcall stringify cand)
+                           as string = (funcall stringify-fn cand)
                            as choice = (concat hint sep string)
                            when (and initial-input
                                      (equal string initial-input))
