@@ -52,7 +52,8 @@
                           stringify-fn
                           autoselect-if-single
                           initial-input
-                          read-char)
+                          read-char
+                          chars)
   "Use PROMPT to prompt for a selection from CANDIDATES.
 
 STRINGIFY-FN is an optional function to represent a candidate as a string.
@@ -63,7 +64,7 @@ COMPLETING-READ call.
 If READ-CHAR is non-nil, a single character key press is read
 and mapped to the corresponding single-char candidate."
 
-  (let* ((hints-cands (selcand-hints candidates))
+  (let* ((hints-cands (selcand-hints candidates chars))
          (sep ") ")
          (stringify-fn (or stringify-fn #'prin1-to-string))
          (initial-candidate nil)
