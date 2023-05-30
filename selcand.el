@@ -39,7 +39,7 @@
 (require 'cl-lib)
 (require 'subr-x)
 
-(defcustom selcand-default-hints
+(defcustom selcand-default-hint-chars
   "1234acdefqrstvwxz"
   "Default hint chars."
   :type 'string
@@ -98,7 +98,7 @@ and mapped to the corresponding single-char candidate."
   "Return an alist (HINT . CAND) for each candidate in CANDS.
 
   Each hint consists of characters in the string CHARS."
-  (setf chars (or chars selcand-default-hints))
+  (setf chars (or chars selcand-default-hint-chars))
   (cl-assert cands)
   (cl-loop with hint-width = (ceiling (log (length cands) (length chars)))
            with current = '("")
