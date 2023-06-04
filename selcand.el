@@ -77,26 +77,26 @@ and mapped to the corresponding single-char candidate."
                            do (setq initial-candidate choice)
                            collect choice))
          (prompt (or prompt "select candidate: "))
-         (choice (if (and autoselect-if-single (null (cdr choices)))
-                     (car choices)
-                   (cond
+         (choice (cond
+                  ((and autoselect-if-single (null (cdr choices)))
+                   (car choices))
+                  (read-char
+                   (unless
+                       (= 1 (apply #'max (mapcar (lambda (hint-cand)
+                                                   (length (car hint-cand)))
+                                                 hints-cands)))
+                     (error
+                      "Not enough 1-char hints for %d candidates"
+                      (length candidates)))
+                   (char-to-string
                     (read-char
-                     (unless
-                      (= 1 (apply #'max (mapcar (lambda (hint-cand)
-                                                  (length (car hint-cand)))
-                                                hints-cands)))
-                      (error
-                       "Not enough 1-char hints for %d candidates"
-                       (length candidates)))
-                     (char-to-string
-                      (read-char
-                       (concat prompt "\n" (string-join choices "\n")))))
-                    (t (minibuffer-with-setup-hook
-                           #'minibuffer-completion-help
-                         (completing-read prompt choices
-                                          nil
-                                          t
-                                          initial-candidate))))))
+                     (concat prompt "\n" (string-join choices "\n")))))
+                  (t (minibuffer-with-setup-hook
+                         #'minibuffer-completion-help
+                       (completing-read prompt choices
+                                        nil
+                                        t
+                                        initial-candidate)))))
          (cand (let* ((hint (car (split-string choice sep))))
                  (cdr (assoc hint hints-cands #'equal)))))
     cand))
