@@ -1,4 +1,4 @@
-;;; selcand.el --- Select a candidate from a tree of hint characters
+;;; selcand.el --- Select a candidate from a tree of hint characters -*- lexical-binding: t; -*-
 ;;
 ;; Filename: selcand.el
 ;; Author: Ernesto Alfonso
