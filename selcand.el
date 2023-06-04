@@ -98,7 +98,7 @@ and mapped to the corresponding single-char candidate."
                                         t
                                         initial-candidate)))))
          (cand (let* ((hint (car (split-string choice sep))))
-                 (cdr (assoc hint hints-cands #'equal)))))
+                 (alist-get hint hints-cands nil nil #'equal))))
     cand))
 
 (defun selcand-hints (cands &optional chars)
