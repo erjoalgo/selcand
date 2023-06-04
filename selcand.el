@@ -33,7 +33,6 @@
 ;; It is intended to be used from emacs lisp code to prompt the user
 ;; to select from a list of choices.
 ;; Sample usage: (load-theme (selcand-select (custom-available-themes)))
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
 
