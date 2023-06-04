@@ -32,7 +32,7 @@
 ;; make a selection.
 ;; It is intended to be used from emacs lisp code to prompt the user
 ;; to select from a list of choices.
-;; Sample usage: (switch-to-buffer (selcand-select (buffer-list)))
+;; Sample usage: (load-theme (selcand-select (custom-available-themes)))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
