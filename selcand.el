@@ -109,7 +109,7 @@ and mapped to the corresponding single-char candidate."
   (cl-assert cands)
   (cl-loop with hint-width = (ceiling (log (length cands) (length chars)))
            with current = '("")
-           for _ below hint-width do
+           for i below hint-width do
            (setq current
                  (cl-loop for c across chars nconc
                           (mapcar (apply-partially #'concat (char-to-string c))
