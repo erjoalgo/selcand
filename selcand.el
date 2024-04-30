@@ -4,7 +4,7 @@
 ;; Author: Ernesto Alfonso
 ;; Maintainer: (concat "erjoalgo" "@" "gmail" ".com")
 ;; Created: Thu Jan 24 00:18:56 2019 (-0800)
-;; Version: 0.0.2
+;; Version: 0.0.3
 ;; Package-Requires: ((emacs "25.1"))
 ;; URL: https://github.com/erjoalgo/selcand
 ;; Keywords: lisp completing-read prompt combinations vimium
